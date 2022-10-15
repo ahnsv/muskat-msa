@@ -11,8 +11,8 @@ image:
   tag: "latest"
 
 imagePullSecrets: 
-  - name: dockerhub
-    value: $DOCKERHUB_CONFIG_JSON
+  - 
+    name: dockerhub
 nameOverride: ""
 fullnameOverride: ""
 
