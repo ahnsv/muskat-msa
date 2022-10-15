@@ -1,0 +1,3 @@
+icon: https://img.freepik.com/premium-photo/fresh-shine-muscat-grape-isolated-white_192913-822.jpg?w=2000
+deploy:
+  - helm upgrade --install gymwork-django helm/muskat-msa --values chart/values.yaml --values chart/values-dev.yaml --set env.AWS_ACCESS_KEY_ID=${GYMWORK_DJANGO_AWS_ACCESS_KEY_ID} --set env.AWS_SECRET_ACCESS_KEY=${GYMWORK_DJANGO_AWS_SECRET_ACCESS_KEY} --set env.DB_HOST=${GYMWORK_DJANGO_DB_HOST} --set env.DB_PASSWORD=${GYMWORK_DJANGO_DB_PASSWORD} --set preview.enabled=${GYMWORK_DJANGO_POSTGRES_ENABLED} --set env.AOS__GOOGLE_API_KEY=${GYMWORK_DJANGO_AOS__GOOGLE_API_KEY} --set env.IOS__SHARED_SECRET=${GYMWORK_DJANGO_IOS__SHARED_SECRET}
