@@ -37,3 +37,21 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      - uses: okteto/context@latest
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+      - name: "Activate Namespace"
+        uses: okteto/namespace@latest
+        with:
+          namespace: muskat-ahnsv
+      - name: "Trigger the pipeline"
+        uses: okteto/pipeline@latest
+        with:
+          name: muskat-msa
+          namespace: muskat-ahnsv
+          timeout: 8m
