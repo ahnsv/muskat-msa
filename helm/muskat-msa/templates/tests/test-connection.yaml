@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "muskat-msa.fullname" . }}-test-connection"
+  labels:
+    {{- include "muskat-msa.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "muskat-msa.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
