@@ -14,4 +14,4 @@ RUN go build -o /muskat-msa
 
 EXPOSE 8080
 
-CMD [ "/muskat-msa" ]
+CMD [ "/muskat-msa", "api", "run"]
