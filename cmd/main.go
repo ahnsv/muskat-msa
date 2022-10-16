@@ -8,8 +8,8 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-	Use:   "muskat-msa",
-	Short: fmt.Sprintf("'%s' is a commerce solution powered by msa", "muskat-msa"),
+	Use:   Name,
+	Short: fmt.Sprintf("'%s' is a commerce solution powered by msa", Name),
 }
 
 func init() {
